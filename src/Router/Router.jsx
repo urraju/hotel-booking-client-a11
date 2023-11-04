@@ -24,7 +24,8 @@ import Details from "../Components/Details/Details";
                },
                {
                     path : 'details/:id',
-                    element : <Details/>
+                    element : <Details/>,
+                    loader :  ({params}) => fetch(`http://localhost:3000/rooms/${params.id}`)
 
 
                },
