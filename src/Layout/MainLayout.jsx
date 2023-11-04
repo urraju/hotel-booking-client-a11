@@ -1,0 +1,106 @@
+import { Link, NavLink } from "react-router-dom";
+import {} from 'react-icons/'
+import logo from '../assets/logo.webp'
+import userIcon from '../assets/user2.svg'
+import useAuth from "../Auth/useAuth";
+const MainLayout = () => {
+
+  const {user , logOut} = useAuth()
+    const NavBar = <>
+        <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/'>Home</NavLink>
+        <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/rooms'>Rooms</NavLink>
+        <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/mybooking'>My Booking</NavLink>
+    </>
+    const handleLogOut = () => {
+      logOut()
+      .then().catch()
+    }
+    return(
+      <div className="w-full px-6  top-0 z-30 md:px-0">
+      <div className=" w-full md:w-9/12 lg:w-9/12   mx-auto rounded-full mt-6   px-3">
+        <div className="navbar ">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <label
+                tabIndex={0}
+                className="btn text-rose-500 btn-ghost   lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-gradient-to-t to-violet-700 from-black w-52 rounded border border-gradient-to-tr  border-gray-600 font-normal uppercase font-roboto gap-5  text-white md:text-white lg:text-white "
+              >
+                {NavBar}
+              </ul>
+            </div>
+            <NavLink to="/" className="  ">
+               
+                <img
+                  className="w-28 hidden lg:block md:block "
+                  src={logo}
+                  alt=""
+                />
+              
+               
+            </NavLink>
+          </div>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1  uppercase  gap-5 ">
+              {NavBar}
+            </ul>
+          </div>
+
+          <div className="navbar-end flex gap-2 items-center">
+            {/* <div>
+              <DarkMode />
+            </div> */}
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user ? user.photoURL : userIcon} alt="" />
+                </div>
+              </label>
+
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-4 shadow menu menu-sm dropdown-content bg-black text-white  w-56 rounded-lg"
+              >
+                <li>{user ? user.displayName : ""}</li>
+                <li>{user ? user.email : ""}</li>
+              </ul>
+            </div>
+
+            {user ? (
+              <button
+                onClick={handleLogOut}
+                className="text-white font-philospar uppercase bg-rose-500  text-[12px] md:py-1 md:text-[16px] px-4  rounded py-[3px]"
+              >
+                Sing out
+              </button>
+            ) : (
+              <Link to="/login">
+                <button className="text-white md:py-1 text-[13px] uppercase font-philospar bg-rose-500 px-5 md:text-[16px] rounded py-[3px]">
+                  Login
+                </button>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+    )}
+export default MainLayout;
