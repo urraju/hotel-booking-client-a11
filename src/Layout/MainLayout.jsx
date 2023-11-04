@@ -6,15 +6,18 @@ import useAuth from "../Auth/useAuth";
 const MainLayout = () => {
 
   const {user , logOut} = useAuth()
+  const handleLogOut = () => {
+    logOut()
+    .then().catch()
+  }
+
     const NavBar = <>
         <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/'>Home</NavLink>
         <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/rooms'>Rooms</NavLink>
         <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/mybooking'>My Booking</NavLink>
+        {user?.email ?  <NavLink onClick={handleLogOut} className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/login'>logout</NavLink> :  <NavLink className={({isActive}) => isActive ? 'underline text-rose-500' : ''} to='/login'>login</NavLink>}
     </>
-    const handleLogOut = () => {
-      logOut()
-      .then().catch()
-    }
+   
     return(
       <div className="w-full px-6  top-0 z-30 md:px-0">
       <div className=" w-full md:w-9/12 lg:w-9/12   mx-auto rounded-full mt-6   px-3">
@@ -58,8 +61,8 @@ const MainLayout = () => {
                
             </NavLink>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1  uppercase  gap-5 ">
+          <div className="navbar-end hidden lg:flex">
+            <ul className="menu font-bold menu-horizontal px-1  uppercase  gap-5 ">
               {NavBar}
             </ul>
           </div>
@@ -84,7 +87,7 @@ const MainLayout = () => {
               </ul>
             </div>
 
-            {user ? (
+            {/* {user ? (
               <button
                 onClick={handleLogOut}
                 className="text-white font-philospar uppercase bg-rose-500  text-[12px] md:py-1 md:text-[16px] px-4  rounded py-[3px]"
@@ -97,7 +100,7 @@ const MainLayout = () => {
                   Login
                 </button>
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </div>

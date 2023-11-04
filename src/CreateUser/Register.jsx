@@ -16,15 +16,15 @@ const Register = () => {
     const password = form.password.value;
     const info = { name, email, photo, password };
 
-    if (password.length < 6) {
-      return toast.error("Password must be 6 characters!");
-    }
-    if (!/[A-Z]/.test(password)) {
-      return toast.error("Password must be one uppercase!");
-    }
-    if (!/[@#$%^&+=!]/.test(password)) {
-      return toast.error("Please put one special symbol!");
-    }
+    // if (password.length < 6) {
+    //   return toast.error("Password must be 6 characters!");
+    // }
+    // if (!/[A-Z]/.test(password)) {
+    //   return toast.error("Password must be one uppercase!");
+    // }
+    // if (!/[@#$%^&+=!]/.test(password)) {
+    //   return toast.error("Please put one special symbol!");
+    // }
     register ? toast.success("Register Successfull!") : "";
 
     console.log(info);
@@ -49,7 +49,7 @@ const Register = () => {
   };
   return (
     <div className="w-full p-4 h-screen">
-      <div className=" md:w-6/12 p-3 mt-36 h-[550px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  from-violet-700 to-violet-950">
+      <div className=" md:w-6/12 p-3 mt-10 h-[550px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  to-blue-700 from-violet-950">
         <form
           onSubmit={handleSubmit}
           className="w-96 rounded-lg p-10 backdrop-blur bg-white/10 font-philospar"
@@ -93,7 +93,7 @@ const Register = () => {
               id=""
             />
           </label>
-          <button className="w-full text-white rounded bg-gradient-to-r  to-violet-700 from-violet-950 mt-4 py-1">
+          <button className="w-full text-white rounded bg-gradient-to-r  from-blue-700 to-violet-950 mt-4 py-1">
             Register
           </button>
 
