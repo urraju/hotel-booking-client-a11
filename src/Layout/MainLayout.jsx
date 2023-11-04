@@ -53,7 +53,7 @@ const MainLayout = () => {
             <NavLink to="/" className="  ">
                
                 <img
-                  className="w-28 hidden lg:block md:block "
+                  className="w-28  "
                   src={logo}
                   alt=""
                 />
