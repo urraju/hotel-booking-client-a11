@@ -7,6 +7,7 @@
       "description": "Indulge in the epitome of opulence at the Luxury Paradise Hotel. Our 5-star establishment promises an unparalleled experience of luxury and comfort. With beautifully appointed rooms and world-class amenities, you'll be immersed in a world of sophistication and elegance. Each room offers 400 square feet of space, allowing you to relax in style. Enjoy our special offer: Stay for 3 nights, and get the 4th night free.",
       "pernight_price": 125,
       "room_size": "400 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Stay 3 nights, get 1 night free",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -17,6 +18,7 @@
       "description": "Seaside Resort & Spa invites you to bask in the gentle caress of the sea breeze while relishing our rejuvenating spa services. Our tranquil retreat is a sanctuary of relaxation, with rooms that offer 350 square feet of space. Our special offer includes a generous 20% discount on spa treatments to enhance your stay. Unwind, and let the waves serenade your senses.",
       "pernight_price": 90,
       "room_size": "350 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "20% off on spa treatments",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -27,6 +29,7 @@
       "description": "Escape to the serenity of the mountains at Mountain View Lodge. Our lodge offers breathtaking views and a cozy atmosphere. The 300-square-foot rooms provide ample space for relaxation. As a special treat, we provide complimentary breakfast to start your day on a high note. Discover the beauty of the mountains with us.",
       "pernight_price": 60,
       "room_size": "300 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Complimentary breakfast",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -37,6 +40,7 @@
       "description": "City Lights Hotel offers the perfect urban getaway, allowing you to immerse yourself in the vibrancy of the city. Our 450-square-foot rooms provide spacious and comfortable accommodations. As a special bonus, we offer a free city tour with your stay to help you explore all the city has to offer.",
       "pernight_price": 100,
       "room_size": "450 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Free city tour with your stay",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -47,6 +51,7 @@
       "description": "Find your connection with nature at Riverside Retreat. Our serene location by the riverbank offers a peaceful escape. Each room, spanning 320 square feet, ensures your comfort. For extended stays, we provide a 10% discount to make your experience even more inviting. Embrace the tranquility and natural beauty of our retreat.",
       "pernight_price": 75,
       "room_size": "320 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "10% off for extended stays",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -57,6 +62,7 @@
       "description": "Experience the charm of a bygone era at the Historic Elegance Inn. Our rooms, covering 380 square feet, exude classic elegance. As a warm welcome, enjoy a complimentary drink upon your arrival. Step back in time while enjoying the comfort of modern amenities. It's a journey through history and sophistication.",
       "pernight_price": 85,
       "room_size": "380 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Welcome drink on arrival",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -67,6 +73,7 @@
       "description": "Bask in the lap of luxury with direct access to a pristine beach at the Beachfront Bliss Resort. Our spacious 500-square-foot rooms provide a haven of comfort and relaxation. As a special treat, we offer free watersports activities to ensure your stay is filled with excitement and adventure.",
       "pernight_price": 150,
       "room_size": "500 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Free watersports activities",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -77,6 +84,7 @@
       "description": "Discover true serenity at Serenity Suites. Our peaceful retreat offers rooms with 330 square feet of space, allowing you to unwind in comfort. As a special bonus, we offer a spa discount for couples, making your stay a perfect romantic escape. Embrace tranquility and relaxation with us.",
       "pernight_price": 70,
       "room_size": "330 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Spa discount for couples",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -87,6 +95,7 @@
       "description": "Experience a golfer's dream at the Golfers' Paradise Hotel. Our beautiful golf resort offers spacious rooms of 420 square feet. As a special treat, we provide a discount on green fees for our guests, so you can enjoy endless rounds of golf on our pristine courses. Tee off and unwind with us.",
       "pernight_price": 110,
       "room_size": "420 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Green fee discount for guests",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -97,6 +106,7 @@
       "description": "Welcome to the Family Friendly Inn, where family vacations become unforgettable. Our spacious rooms, covering 360 square feet, are designed with families in mind. As a special offer, kids eat for free, making your family vacation even more budget-friendly. Create lasting memories with your loved ones here.",
       "pernight_price": 80,
       "room_size": "360 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Kids eat free",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -107,6 +117,7 @@
       "description": "Embrace the call of the wild at the Wilderness Lodge Retreat. Our cozy cabins offer a comfortable stay with rooms of 370 square feet. As a special bonus, we offer guided nature walks to explore the untouched wilderness surrounding our lodge. Connect with nature and experience a true retreat.",
       "pernight_price": 95,
       "room_size": "370 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Guided nature walks",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     },
@@ -116,7 +127,7 @@
       "price": 260,
       "description": "Experience chic and trendy accommodation at the heart of the city at the Urban Boutique Hotel. Our spacious 480-square-foot rooms are designed for your utmost comfort. As a special treat, enjoy a complimentary wine tasting experience during your stay. Immerse yourself in city life and style with us.",
       "pernight_price": 130,
-      "room_size": "480 sq. ft",
+      "room_count" : [1,2,3,4,5],
       "special_offer": "Complimentary wine tasting",
       "images": ["https://i.ibb.co/xYxWBNW/r-architecture-2g-Dwl-Iim3-Uw-unsplash.jpg", "https://i.ibb.co/zhfdhsD/lissete-laverde-b-BKlac1-Ixw-E-unsplash.jpg", "https://i.ibb.co/JFkY8VH/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg", "https://i.ibb.co/tCSjFCL/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg"]
     }

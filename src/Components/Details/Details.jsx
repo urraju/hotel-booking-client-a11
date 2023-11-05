@@ -1,7 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { FcNext } from "react-icons/fc";
+import axios from "axios";
+import moment from "moment/moment";
 const Details = () => {
+  const bookingTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     const data = useLoaderData()
     const {
         _id,
@@ -11,9 +14,27 @@ const Details = () => {
         description,
         pernight_price,
         room_size,
+        room_count,
         special_offer,
         images,
+         
       } = data;
+      const sendBooking = {
+        bookingTime : bookingTime,
+        img : img,
+        price : price,
+        description : description,
+        pernight_price : pernight_price,
+        room_size : room_size,
+        special_offer : special_offer,
+        images : images,
+        room_count : room_count
+
+      }
+
+      const handleBooking = () => {
+        axios.post(`http://localhost:3000/mybooking`,sendBooking)
+      }
     return(
         <div className="w-full my-20">
               <div className="max-w-7xl px-4 mt-10 mx-auto">
@@ -33,10 +54,14 @@ const Details = () => {
                     <p><span className="text-cyan-600 font-bold">Room Size </span>: {room_size}</p>
                     <p><span className="font-bold">Full Price </span>: ${price}</p>
                     <p><span className="font-bold">Per Night</span> : ${pernight_price}</p>
+                    <div>
+                      {room_count?.map((room,count) => 
+                      <button className="bg-success mr-1 px-3 mt-3 text-white rounded" >Room {count +1}</button>)}
+                    </div>
                    </div>
 
                     <div>
-                        <button className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center">Book Now<FcNext className="text-white"/></button>
+                       {room_count ?  <button onClick={handleBooking} className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center">Abalviale<FcNext className="text-white"/></button> :  <button onClick={handleBooking} className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center">unable<FcNext className="text-white"/></button>}
                     </div>
                 </div>
               </div>
