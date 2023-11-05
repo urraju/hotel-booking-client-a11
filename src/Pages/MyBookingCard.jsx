@@ -1,6 +1,7 @@
 
 
-const MyBookingCard = () => {
+const MyBookingCard = ({data}) => {
+    console.log(data);
     return(
         <div>
              <p> HELLO I Am MyBookingCard </p>

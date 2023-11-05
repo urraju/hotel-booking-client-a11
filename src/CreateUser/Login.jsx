@@ -3,6 +3,7 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Auth/useAuth";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
+import axios from "axios";
  
 
 const Login = () => {
@@ -14,14 +15,23 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const info = { email, password };
-    console.log(info);
-    login(email, password).then((res) => console.log(res.user));
-    navigate(location?.state ? location.state : "/")
-    .catch((error) =>
-      console.log(error.message)
-    );
-  };
+    login(email, password)
+    .then((res) =>  {
+      console.log(res.user);
+      const userEmail = {email}
+      axios.post('http://localhost:3000/jwt',userEmail, {withCredentials : true})
+      .then(res => {
+        if(res.data.success) {
+          navigate(location?.state ? location.state : "/")
+        }
+      })
+    });
+    if(user){
+      form.reset()
+    }
+    
+       
+    }
 
   return (
     <div className="w-full p-4 h-screen">
