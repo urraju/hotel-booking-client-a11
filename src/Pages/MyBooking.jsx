@@ -19,7 +19,7 @@ const MyBooking = () => {
     
     return(
         <div>
-              <div>
+              <div className=" max-w-7xl mt-20 px-3 mx-auto grid grid-cols-1  gap-5">
                 {bookData?.map(book => <MyBookingCard key={book._id} data={book}/>)}
               </div>
         </div>
