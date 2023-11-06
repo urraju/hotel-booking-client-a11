@@ -4,43 +4,31 @@ import { useLoaderData } from "react-router-dom";
 
 const Rooms = () => {
   const data = useLoaderData();
+  const [sorting, setSorting] = useState([]);
 
-  //   const [data , setData] = useState([])
-  const [displayRoom, setDisplayRoom] = useState([...data]);
-  const [search, setSearch] = useState([...data]);
-
-    const arraydata = []
-    const sorting = data.sort((a,b) => b.price - a.price)
-    console.log(sorting);
-
-
-
-
-  const handleFilter = (e) => {
-    const inputValue = parseInt(e.target.value);
-    console.log(inputValue);
-    const filterValue = search.filter(
-      (card) => card.price === parseInt(inputValue)
-    );
-    console.log(filterValue);
-    setDisplayRoom(filterValue);
+  const handleSorting = (e) => {
+    setSorting(e.target.value);
+     
   };
-  //   useEffect(() => {
-  //     fetch('http://localhost:3000/rooms')
-  //     .then(res => res.json())
-  //     .then(data => setData(data))
-  //   },[])
+  if(sorting === 'high-to-low'){
+    data.sort((a,b) => b.price - a.price)
+  }else if(sorting === 'low-to-high'){
+    data.sort((a,b) => a.price - b.price)
+  }
+ 
   return (
-    <div>
-      <input
-        onChange={handleFilter}
-        type="text"
-        name="filter"
-        placeholder="Filter"
-      />
+    <div className=" px-4 md:px-8">
+     <div className="max-w-7xl mx-auto text-right">
+         
+      <select className=" bg-teal-500 border-l-4 border-gray-300 outline-none rounded mt-4 shadow-xl  font-normal tracking-wider px-2 py-1 text-white" onChange={handleSorting} value={sorting} id="">
+        <option defaultValue={data} value="filter">Filter</option>
+        <option value="high-to-low">High To Low</option>
+        <option value="low-to-high">Low To High</option>
+      </select>
+     </div>
 
-      <div className="max-w-7xl my-20 mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
-        {displayRoom?.map((room) => (
+      <div className="max-w-7xl my-20 mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {data?.map((room) => (
           <RoomsCard key={room._id} data={room} />
         ))}
       </div>

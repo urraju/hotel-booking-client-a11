@@ -19,8 +19,8 @@ const MainLayout = () => {
     </>
    
     return(
-      <div className="w-full px-6  top-0 z-30 md:px-0">
-      <div className=" w-full md:w-9/12 lg:w-9/12   mx-auto rounded-full mt-6   px-3">
+      <div className="w-full px-6 md:px-10 top-0 z-30 ">
+      <div className=" max-w-7xl mx-auto mt-6   px-3">
         <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">

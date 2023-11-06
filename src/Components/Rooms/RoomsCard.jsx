@@ -7,21 +7,23 @@ const RoomsCard = ({ data }) => {
     img,
     name,
     price,
-    description,
-    pernight_price,
-    room_size,
-    special_offer,
-    images,
+    room_count,
+     
   } = data;
   return (
-    <div className="px-5 md:px-0">
+    <div className="px-5 mt-10 md:px-0">
       <Link to={`/details/${_id}`}>
-        <div className="hoverImg w-full md:w-96 relative">
-          <img className=" rounded object-fill" src={img} alt="" />
-          <h1 className="absolute bottom-4 left-3 bg-black px-4 py-1 font-montserrat rounded border-l-4 border-rose-500 text-white ">{name}</h1>
-          
+        <div className="hoverImg w-full  relative">
+          <img className=" rounded-xl object-fill" src={img} alt="" />
+          <div className="absolute w-3/4 rounded-xl border border-orange-300 -bottom-10 left-12 p-4 backdrop-blur bg-black/20">
+            <h1 className="  px-3 font-roboto   rounded border-l-2  text-white ">
+              {name}
+            </h1>
+              <p className="text-rose-500  mt-2 border-r-2 border-rose-500  inline-block font-josefin rounded px-3">Price : ${price}</p>
+              
+          </div>
         </div>
-        <p>Price : {price}</p>
+         
       </Link>
     </div>
   );

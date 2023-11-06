@@ -50,6 +50,7 @@ const Details = () => {
     document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
+      text : 'You selected Confirmation',
       icon: "success",
 
       showCancelButton: true,
@@ -153,7 +154,7 @@ const Details = () => {
           </div>
 
           <div>
-            {room_count && user?.email ? (
+            {room_count   ? (
               <button
                 onClick={handleBooking}
                 className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center"
@@ -173,7 +174,7 @@ const Details = () => {
 
       {/* modal part */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
+        <div className="modal-box py-">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
@@ -183,7 +184,7 @@ const Details = () => {
             Book details !
           </h3>
           <div className="mt-3">
-            <p className="font-roboto text-teal-600 text-xl mt-2">{name}</p>
+            <p className="font-roboto text-teal-600 text-xl mt-2 mb-2">{name}</p>
             <p>
               <span className="font-bold">Full Price : </span>${price}
             </p>
@@ -200,11 +201,11 @@ const Details = () => {
               <span className="font-bold">Room Size : </span>
               {room_size}
             </p>
-            <DatePicker
+             <p className="flex flex-col"><span className="font-josefin font-bold ">Select Date : </span><DatePicker className="border outline-none px-2 py-1 border-violet-300 rounded mt-2"
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               dateFormat="MM/d/yyyy,h:mm:ss a"
-            />
+            /></p>
           </div>
         </div>
       </dialog>
