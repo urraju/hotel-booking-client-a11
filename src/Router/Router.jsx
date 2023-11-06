@@ -8,6 +8,7 @@ import Register from "../CreateUser/Register";
 import Details from "../Components/Details/Details";
 import PrivateRoute from "../Private/PrivateRoute";
 import UpdateDate from "../Update/UpdateDate";
+import ReviewCard from "../review/ReviewCard";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
           path : 'updatedate/:id',
           element : <UpdateDate/>,
           loader : ({params}) => fetch(`http://localhost:3000/mybooking/${params.id}`)
+      },
+      {
+          path : 'reviewcard/:id',
+          element : <ReviewCard/>,
+          loader : ({params}) => fetch(`http://localhost:3000/review/${params.id}`)
       },
       {
         path: "login",

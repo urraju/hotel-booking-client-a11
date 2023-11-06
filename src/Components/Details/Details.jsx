@@ -1,14 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { FcNext, FcCancel } from "react-icons/fc";
-import axios from "axios";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment/moment";
 import useAuth from "../../Auth/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 const Details = () => {
-  const [count , setCount] = useState([])
+  // const [count, setCount] = useState([]);
+  const newDate = new Date()
+  // const formattedDate = date.toLocaleDateString();
+  const [date, setDate] = useState();
   const { user } = useAuth();
   const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
   const data = useLoaderData();
@@ -26,7 +30,7 @@ const Details = () => {
   } = data;
   const sendBooking = {
     bookingTime: bookingTime,
-    userEmail: user.email,
+    userEmail: user?.email,
     name: name,
     img: img,
     price: price,
@@ -39,22 +43,11 @@ const Details = () => {
   };
 
   const handleBooking = () => {
+    document.getElementById("my_modal_3").showModal()
     Swal.fire({
-      title: `Are you sure?`,
-      text: `
-          Name : ${name}
-          ______________________
-          Full Price : $${price}
-          ______________________
-          Per Night : $${pernight_price}
-          ______________________
-          Room Size $: ${room_size}
-          ______________________
-          Special Offer : ${special_offer}
-          ______________________
-          Booking Time : ${bookingTime}
-          ______________________
-          `,
+      title: `You Want to Bookin Now`,
+      icon : "success",
+      
 
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -76,10 +69,8 @@ const Details = () => {
                 "Booking!",
                 "Your file has been Bookin.",
                 "Successfull"
-                
               );
-              const data = room_count.filter(fil => fil !== room_count)
-              setCount(data)
+              
             }
           });
       }
@@ -131,7 +122,7 @@ const Details = () => {
             <p>
               {" "}
               <span className="text-violet-700 font-bold">Date : </span>
-              {bookingTime}
+              {date}
             </p>
 
             <div>
@@ -140,7 +131,7 @@ const Details = () => {
                   key={room.index}
                   className="mr-1 text-orange-400 border-b-2 border-success px-1  mt-3 "
                 >
-                   Seats {count + 1}
+                  Seats {count + 1}
                 </button>
               ))}
               {room_count ? (
@@ -173,6 +164,27 @@ const Details = () => {
           </div>
         </div>
       </div>
+
+      {/* modal part */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <h3 className="font-bold text-center text-xl text-rose-500 border-b-2 py-2 font-roboto">Book details !</h3>
+         <div className="mt-3">
+         <p className="font-roboto text-teal-600 text-xl mt-2">{name}</p>
+          <p><span className="font-bold">Full Price : </span>${price}</p>
+              <p><span className="font-bold">Per Night : </span>${pernight_price}</p>
+              <p> <span className="font-bold">Special Offer : </span>{special_offer}</p>
+              <p> <span className="font-bold">Room Size : </span>{room_size}</p>
+              <DatePicker className="border-4 border-rose-500" selected={date}   onChange={(date) => setDate(date)}/>
+         </div>
+        </div>
+      </dialog>
+     
     </div>
   );
 };
