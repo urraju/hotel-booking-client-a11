@@ -8,13 +8,17 @@ import useAuth from "../../Auth/useAuth";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import ReviewCard from "../../review/ReviewCard";
+// import { icons } from "react-icons";
 const Details = () => {
   // const [count, setCount] = useState([]);
-  const newDate = new Date()
+
   // const formattedDate = date.toLocaleDateString();
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  console.log(selectedDate);
   const { user } = useAuth();
-  const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
+  // const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
   const data = useLoaderData();
   const {
     _id,
@@ -29,7 +33,7 @@ const Details = () => {
     images,
   } = data;
   const sendBooking = {
-    bookingTime: bookingTime,
+    bookingTime: selectedDate,
     userEmail: user?.email,
     name: name,
     img: img,
@@ -43,11 +47,10 @@ const Details = () => {
   };
 
   const handleBooking = () => {
-    document.getElementById("my_modal_3").showModal()
+    document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
-      icon : "success",
-      
+      icon: "success",
 
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -70,11 +73,14 @@ const Details = () => {
                 "Your file has been Bookin.",
                 "Successfull"
               );
-              
             }
           });
       }
     });
+  };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
   };
 
   return (
@@ -122,7 +128,7 @@ const Details = () => {
             <p>
               {" "}
               <span className="text-violet-700 font-bold">Date : </span>
-              {date}
+              {}
             </p>
 
             <div>
@@ -173,18 +179,36 @@ const Details = () => {
               ✕
             </button>
           </form>
-          <h3 className="font-bold text-center text-xl text-rose-500 border-b-2 py-2 font-roboto">Book details !</h3>
-         <div className="mt-3">
-         <p className="font-roboto text-teal-600 text-xl mt-2">{name}</p>
-          <p><span className="font-bold">Full Price : </span>${price}</p>
-              <p><span className="font-bold">Per Night : </span>${pernight_price}</p>
-              <p> <span className="font-bold">Special Offer : </span>{special_offer}</p>
-              <p> <span className="font-bold">Room Size : </span>{room_size}</p>
-              <DatePicker className="border-4 border-rose-500" selected={date}   onChange={(date) => setDate(date)}/>
-         </div>
+          <h3 className="font-bold text-center text-xl text-rose-500 border-b-2 py-2 font-roboto">
+            Book details !
+          </h3>
+          <div className="mt-3">
+            <p className="font-roboto text-teal-600 text-xl mt-2">{name}</p>
+            <p>
+              <span className="font-bold">Full Price : </span>${price}
+            </p>
+            <p>
+              <span className="font-bold">Per Night : </span>${pernight_price}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Special Offer : </span>
+              {special_offer}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Room Size : </span>
+              {room_size}
+            </p>
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="MM/d/yyyy,h:mm:ss a"
+            />
+          </div>
         </div>
       </dialog>
-     
+      <ReviewCard />
     </div>
   );
 };
