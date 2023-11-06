@@ -136,7 +136,7 @@ const Details = () => {
               {room_count?.map((room, count, index) => (
                 <button
                   key={room.index}
-                  className="mr-1 text-orange-400 border-b-2 border-success px-1  mt-3 "
+                  className="mr-1 text-violet-800 border-b-2 border-success px-1  mt-3 "
                 >
                   Seats {count + 1}
                 </button>

@@ -9,6 +9,7 @@ import Details from "../Components/Details/Details";
 import PrivateRoute from "../Private/PrivateRoute";
 import UpdateDate from "../Update/UpdateDate";
 import ReviewCard from "../review/ReviewCard";
+import FeatureRoom from "../Components/FeatureRoom/FeatureRoom";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
           path : 'reviewcard/:id',
           element : <ReviewCard/>,
           loader : ({params}) => fetch(`http://localhost:3000/review/${params.id}`)
+      },
+      {
+        path : 'featureroom',
+        element : <FeatureRoom/>,
+        // loader : () => fetch('http://localhost:3000/featurerRoom')
       },
       {
         path: "login",

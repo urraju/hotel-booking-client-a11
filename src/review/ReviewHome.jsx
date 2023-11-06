@@ -11,7 +11,7 @@ const ReviewHome = () => {
       .then((data) => setReview(data));
   }, []);
   return (
-    <div className="max-w-7xl px-5 mt-10 mx-auto">
+    <div className="max-w-7xl px-5 mt-20 mx-auto">
        <div className="text-center mb-10">
        <h1 className="text-3xl font-josefin text-center first-letter:text-4xl text-rose-500 mb-2">User All Review !</h1>
         

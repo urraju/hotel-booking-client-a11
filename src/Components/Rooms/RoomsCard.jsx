@@ -11,11 +11,11 @@ const RoomsCard = ({ data }) => {
      
   } = data;
   return (
-    <div className="px-5 mt-10 md:px-0">
+    <div className=" px-5  mt-10 md:px-0">
       <Link to={`/details/${_id}`}>
-        <div className="hoverImg w-full  relative">
+        <div className="w-full  hoverImg  relative">
           <img className=" rounded-xl object-fill" src={img} alt="" />
-          <div className="absolute w-3/4 rounded-xl border border-orange-300 -bottom-10 left-12 p-4 backdrop-blur bg-black/20">
+          <div className="absolute w-3/4 rounded-xl border border-orange-300 -bottom-10 left-12 p-2 backdrop-blur bg-black/20">
             <h1 className="  px-3 font-roboto   rounded border-l-2  text-white ">
               {name}
             </h1>
