@@ -9,12 +9,12 @@ const Testimonial = () => {
         .then(data => setTestimonial(data))
     },[])
     return(
-        <div className="mt-20">
+        <div className="mt-20 p-5">
             <div className="text-center">
                 <h1 className="first-letter:text-5xl first-letter:text-rose-500 mb-2 text-4xl"> User Testimonial</h1>
                 <p className="text-gray-500 mt-4 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero explicabo nostrum <br /> inventore commodi quisquam adipisci doloremque esse,  fuga ratione.</p>
             </div>
-            <div className="mt-20 p-5 py-20  max-w-7xl mx-auto bg-gradient-to-r to-violet-900 from-rose-700">
+            <div className="mt-20 p-5 py-20  max-w-7xl mx-auto bg-gradient-to-r to-violet-500 from-rose-400">
             <div className=" max-w-4xl mx-auto justify-center items-center grid grid-cols-1 md:grid-cols-2 gap-10">
                 {testimonial?.map(tes => <TestCard key={tes._id} data={tes}/>)}
             </div>
