@@ -10,11 +10,13 @@ import PrivateRoute from "../Private/PrivateRoute";
 import UpdateDate from "../Update/UpdateDate";
 import ReviewCard from "../review/ReviewCard";
 import FeatureRoom from "../Components/FeatureRoom/FeatureRoom";
+import NotFound from "../Error/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement : <NotFound/>,
     children: [
       {
         path: "/",

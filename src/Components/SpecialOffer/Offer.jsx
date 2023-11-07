@@ -18,7 +18,7 @@ const Offer = () => {
             </div>
       <div className="max-w-7xl mx-auto">
         <div className="relative">
-          <img className="md:h-[600px] w-full" src={room} alt="" />
+          <img className="md:h-[600px] rounded-t-lg w-full" src={room} alt="" />
           <img className="absolute bottom-0 " src={wave} alt="" />
           <div className="absolute bottom-20 backdrop-blur h-36 w-36 rounded-full text-white bg-white/40 border p-8 left-10">
           <h1 className="text-5xl text-center  font-josefin">35%</h1>
@@ -57,7 +57,7 @@ const Offer = () => {
             </div>
           </div>
         </div>
-          <div className="bg-[#E33467] p-4">
+          <div className="bg-[#E33467] rounded-b-lg p-4">
           <h1 className="w-full uppercase text-gray-300 text-center mb-2 ">The art of meeting your highest expectations</h1>
           <div className="flex flex-col md:flex-row justify-between">
             <p className="flex gap-1 text-white items-center"><BiSolidPhone className="text-orange-300 text-xl border-r"/>+8801824526072</p>
