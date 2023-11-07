@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import ReviewCard from "../../review/ReviewCard";
+import axios from "axios";
+import { Helmet } from "react-helmet";
 // import { icons } from "react-icons";
 const Details = () => {
   // const [count, setCount] = useState([]);
@@ -83,9 +85,25 @@ const Details = () => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
+  //  let object = {}
+  //  for(let room of room_count){
+  //   console.log(room);
+  //    object[room] = room + 1
+  //  }
+  // //  console.log(object);
+  // const handleUpdate = (_id) => {
+  //   axios.patch(`http://localhost:3000/update?id=${_id}`,{object})
+  //   .then(res => console.log(res.data))
+  //   // .catch(error => console.log(error))
+    
+    
+  // }
 
   return (
     <div className="w-full my-20">
+      <Helmet>
+        <title>Details</title>
+      </Helmet>
       <div className="max-w-7xl px-4 mt-10 mx-auto">
         <img
           className=" w-full md:w-[1000px] mx-auto rounded-xl border-b-4 border-blue-500"
@@ -134,7 +152,7 @@ const Details = () => {
 
             <div>
               {room_count?.map((room, count, index) => (
-                <button
+                <button onClick={()=>handleUpdate(_id)}
                   key={room.index}
                   className="mr-1 text-violet-800 border-b-2 border-success px-1  mt-3 "
                 >

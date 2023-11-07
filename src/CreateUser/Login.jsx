@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Auth/useAuth";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import axios from "axios";
+import { Helmet } from "react-helmet";
  
 
 const Login = () => {
@@ -35,6 +36,9 @@ const Login = () => {
 
   return (
     <div className="w-full p-4 h-screen">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className=" mt-10 md:w-6/12 p-3 h-[500px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  from-orange-700 to-sky-950">
         <form
           onSubmit={handleLogin}

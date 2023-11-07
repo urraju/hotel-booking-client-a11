@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -36,6 +37,9 @@ console.log(data);
 
   return (
     <div className="p-3 md:p-10">
+      <Helmet>
+        <title>update date</title>
+      </Helmet>
       <div className="max-w-7xl px-3 h-96 rounded-xl mx-auto bg-gradient-to-l from-violet-100 flex flex-col justify-center items-center  to-teal-200 ">
          <h1 className="mb-4 font-roboto  font-bold md:text-3xl">If You want to Change Booking Date</h1>
         <div className="backdrop-blur  border border-teal-200  rounded flex justify-center items-center bg-white/30 h-2/3 w-full md:w-96">

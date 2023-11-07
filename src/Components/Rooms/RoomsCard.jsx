@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const RoomsCard = ({ data }) => {
@@ -12,6 +13,9 @@ const RoomsCard = ({ data }) => {
   } = data;
   return (
     <div className=" px-5  mt-10 md:px-0">
+      <Helmet>
+        <title>Rooms</title>
+      </Helmet>
       <Link to={`/details/${_id}`}>
         <div className="w-full  hoverImg  relative">
           <img className=" rounded-xl object-fill" src={img} alt="" />

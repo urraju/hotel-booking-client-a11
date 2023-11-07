@@ -3,6 +3,7 @@ import useAuth from "../Auth/useAuth";
 import { useEffect } from "react";
 import MyBookingCard from "./MyBookingCard";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyBooking = () => {
     const {user} = useAuth()
@@ -49,6 +50,9 @@ const MyBooking = () => {
     
     return(
         <div>
+          <Helmet>
+            <title>My Booking</title>
+          </Helmet>
               <div className=" max-w-7xl mt-20 px-3 mx-auto grid grid-cols-1  gap-5">
                 {bookData?.map(book => 
                 <MyBookingCard key={book._id}

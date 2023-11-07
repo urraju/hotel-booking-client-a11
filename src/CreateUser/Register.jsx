@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
  
 import toast, { Toaster } from "react-hot-toast";
 import useAuth from "../Auth/useAuth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -16,15 +17,15 @@ const Register = () => {
     const password = form.password.value;
     const info = { name, email, photo, password };
 
-    // if (password.length < 6) {
-    //   return toast.error("Password must be 6 characters!");
-    // }
-    // if (!/[A-Z]/.test(password)) {
-    //   return toast.error("Password must be one uppercase!");
-    // }
-    // if (!/[@#$%^&+=!]/.test(password)) {
-    //   return toast.error("Please put one special symbol!");
-    // }
+    if (password.length < 6) {
+      return toast.error("Password must be 6 characters!");
+    }
+    if (!/[A-Z]/.test(password)) {
+      return toast.error("Password must be one uppercase!");
+    }
+    if (!/[@#$%^&+=!]/.test(password)) {
+      return toast.error("Please put one special symbol!");
+    }
     register ? toast.success("Register Successfull!") : "";
 
     console.log(info);
@@ -49,6 +50,9 @@ const Register = () => {
   };
   return (
     <div className="w-full p-4 h-screen">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className=" md:w-6/12 p-3 mt-10 h-[550px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  to-blue-700 from-violet-950">
         <form
           onSubmit={handleSubmit}

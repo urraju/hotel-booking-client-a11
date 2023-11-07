@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RoomsCard from "../Components/Rooms/RoomsCard";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Rooms = () => {
   const data = useLoaderData();
@@ -18,6 +19,7 @@ const Rooms = () => {
  
   return (
     <div className=" px-4 md:px-8">
+      <Helmet>Rooms</Helmet>
      <div className="max-w-7xl mx-auto text-right">
          
       <select className=" bg-teal-500 border-l-4 border-gray-300 outline-none rounded mt-4 shadow-xl  font-normal tracking-wider px-2 py-1 text-white" onChange={handleSorting} value={sorting} id="">

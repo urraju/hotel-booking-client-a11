@@ -1,10 +1,12 @@
 import moment from 'moment/moment';
 import banner from '../../assets/banner/banner.jpg'
 import wave from '../../assets/banner/wave.svg'
+ 
 const Banner = () => {
 
     return(
        <div className='w-full '>
+        
          <div className='max-w-7xl   px-5 mt-10 gap-20 mx-auto flex flex-col md:flex-row items-center'>
               <div className='font-josefin lg:z-30'>
                  <h1 className='text-5xl leading-tight font-bold'>Explore Now our <span className='text-rose-500'>Mini Hotel</span></h1>

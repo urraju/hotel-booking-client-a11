@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+ 
 
 const ReviewCard = () => {
   const [review, setReview] = useState([]);
@@ -11,6 +12,7 @@ const ReviewCard = () => {
   }, []);
   return (
     <div className="max-w-7xl px-5 mt-32 mx-auto">
+      
        <div className="text-center mb-10">
        <h1 className="text-4xl font-josefin text-center mb-2">User All Review !</h1>
         <p className="text-gray-500 font-josefin">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Cupiditate consectetur enim hic quisquam eaque nesciunt.</p>

@@ -2,11 +2,16 @@
 [
   {
     "name": "Sarah Johnson",
+    "object" : [{
+          "room1" : 1
+      }],
+       
     "worker_details": [
       "Housekeeping",
       "Room Service",
       "Waitstaff",
       "Server"
+      
     ],
     "img": "https://i.ibb.co/fYzPw6Y/user1.jpg",
     "rating": 4.8,
