@@ -2,9 +2,16 @@ import wave from "../../assets/svg/wave (5).svg";
 import room from "../../assets/svg/rooom10.jpg";
 import { MdLocationOn } from "react-icons/md";
 import { BiLogoGmail,BiSolidPhone } from "react-icons/bi";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Offer = () => {
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+      });
   return (
-    <div className="mt-20 p-5">
+    <div data-aos="zoom-out" className="mt-20 p-5">
        <div className="text-center mb-20">
                 <h1 className="first-letter:text-5xl first-letter:text-rose-500 mb-2 text-4xl font-bebas">Special Offers and Promotions</h1>
                 <p className="text-gray-500 mt-4 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero explicabo nostrum <br /> inventore commodi quisquam adipisci doloremque esse,  fuga ratione.</p>

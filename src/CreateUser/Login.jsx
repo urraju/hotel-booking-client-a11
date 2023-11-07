@@ -5,9 +5,13 @@ import useAuth from "../Auth/useAuth";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
 import axios from "axios";
 import { Helmet } from "react-helmet";
- 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,7 +39,7 @@ const Login = () => {
     }
 
   return (
-    <div className="w-full p-4 h-screen">
+    <div data-aos="flip-up" className="w-full p-4 h-screen">
       <Helmet>
         <title>Login</title>
       </Helmet>

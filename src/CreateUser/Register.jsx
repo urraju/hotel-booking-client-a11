@@ -4,8 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import useAuth from "../Auth/useAuth";
 import { Helmet } from "react-helmet";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Register = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   const navigate = useNavigate();
   const { register, profile } = useAuth();
   const handleSubmit = (e) => {
@@ -49,7 +55,7 @@ const Register = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="w-full p-4 h-screen">
+    <div data-aos="flip-down" className="w-full p-4 h-screen">
       <Helmet>
         <title>Register</title>
       </Helmet>

@@ -11,7 +11,7 @@ const FeatureCard = ({data}) => {
       });
 
     return(
-        <div data-aos="fade-up" className="box ">
+        <div data-aos="zoom-in" className="box ">
             
              <img className="rounded-lg object-fill" src={img} alt="" />
              <div className="content rounded-lg flex justify-center flex-col items-center">

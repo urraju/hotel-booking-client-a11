@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ReviewHome = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   const [review, setReview] = useState([]);
 
   useEffect(() => {
@@ -13,13 +17,13 @@ const ReviewHome = () => {
   return (
     <div className="max-w-7xl px-5 mt-20 mx-auto">
       <div className="text-center mb-10">
-        <h1 className="text-3xl font-josefin text-center first-letter:text-4xl text-rose-500 mb-2 md:text-white">
+        <h1 className="text-3xl font-josefin text-center first-letter:text-4xl text-rose-500 mb-2 lg::text-white">
           User All Review !
         </h1>
       </div>
 
       <Marquee pauseOnHover={true}>
-        <div className="flex gap-">
+        <div   className="flex gap-">
           {review?.map((item) => (
             <div key={item._id}>
               <div className=" py-4 w-64 mr-4 rounded-xl bg-gradient-to-tr px-3 to-orange- border border-gray-200 from-gray-200">

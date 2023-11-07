@@ -2,8 +2,13 @@ import { Link, json, useNavigate } from "react-router-dom";
 import { AiOutlineStar } from "react-icons/ai";
 import useAuth from "../Auth/useAuth";
 import toast from "react-hot-toast";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const MyBookingCard = ({ data, handleDelete }) => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   const back = useNavigate();
   const { user } = useAuth();
 
@@ -56,7 +61,7 @@ const MyBookingCard = ({ data, handleDelete }) => {
   };
 
   return (
-    <div className="">
+    <div data-aos="zoom-in-down" className="">
       <div className=" flex p-4  justify-around flex-col md:flex-row items-center bg-gray-100 border border-teal-400 rounded shadow-xl">
         <div className="flex mb-4 md:mb-0 flex-col items-center justify-center">
           <Link to={`/updatedate/${_id}`}>

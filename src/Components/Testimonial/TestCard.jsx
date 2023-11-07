@@ -3,11 +3,17 @@ import { BsFillPatchCheckFill,BsCheckAll } from "react-icons/bs";
 import {  BiSolidQuoteAltRight } from "react-icons/bi";
 import { AiOutlineStar,AiOutlineDollarCircle } from "react-icons/ai";
 import qrcode from '../../assets/banner/grcode.png'
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const TestCard = ({data}) => {
    
     const {name,worker_details,img,rating,salary,description} = data
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+      });
     return(
-        <div className="relative mt-10 ">
+        <div data-aos="fade-up" className="relative mt-10 ">
               <div className="backdrop-blur border border-gray-400 rounded-xl bg-white/10 p-5">
                 <div className="absolute  -top-10 border rounded-full p-2 left-36">
                     <img className="w-28 h-28 border border-cyan-500 mx-auto rounded-full" src={img} alt="" />

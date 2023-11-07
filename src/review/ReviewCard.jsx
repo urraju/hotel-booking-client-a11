@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
- 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ReviewCard = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  });
   const [review, setReview] = useState([]);
   console.log(review);
   useEffect(() => {
@@ -11,13 +15,13 @@ const ReviewCard = () => {
       .then((data) => setReview(data));
   }, []);
   return (
-    <div className="max-w-7xl px-5 mt-32 mx-auto">
+    <div  className="max-w-7xl px-5 mt-32 mx-auto">
       
        <div className="text-center mb-10">
        <h1 className="text-4xl font-josefin text-center mb-2">User All Review !</h1>
         <p className="text-gray-500 font-josefin">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Cupiditate consectetur enim hic quisquam eaque nesciunt.</p>
        </div>
-      <div className="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div data-aos="zoom-in" className="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
         {review?.map((item) => (
           <div key={item._id}>
 

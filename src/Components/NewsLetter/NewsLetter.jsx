@@ -1,8 +1,14 @@
 import { BiLogoGmail, BiSolidPhone } from "react-icons/bi";
 import gmail from '../../assets/svg/gmail.png'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const NewsLetter = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+      });
   return (
-    <div className="mt-10">
+    <div data-aos="fade-down" className="mt-10">
       <div className="text-center">
         <h1 className="first-letter:text-5xl first-letter:text-rose-500 mb-2 text-4xl">
           Newsletter Signup
