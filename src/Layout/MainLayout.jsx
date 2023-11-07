@@ -45,7 +45,7 @@ const MainLayout = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-gradient-to-t to-violet-700 from-black w-52 rounded border border-gradient-to-tr  border-gray-600 font-normal uppercase font-roboto gap-5  text-white md:text-white lg:text-white "
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-gradient-to-t to-blue-700 from-black w-52 rounded border border-gradient-to-tr  border-gray-600 font-normal uppercase font-roboto gap-5  text-white md:text-white lg:text-white "
               >
                 {NavBar}
               </ul>

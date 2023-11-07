@@ -1,100 +1,55 @@
-
-
+ 
 [
   {
-    "name": "Luxury Suite",
-    "price": 250,
-    "description": "A spacious and elegant luxury suite with a beautiful view.",
-    "room_size": "500 sq. ft.",
-    "special_offer": "Free breakfast included",
-    "img": "https://i.ibb.co/4tMBQk5/room1.jpg"
+    "name": "Sarah Johnson",
+    "worker_details": [
+      "Housekeeping",
+      "Room Service",
+      "Waitstaff",
+      "Server"
+    ],
+    "img": "https://i.ibb.co/fYzPw6Y/user1.jpg",
+    "rating": 4.8,
+    "salary": 32000,
+    "description": "Sarah Johnson is a vital part of our hotel's operations, serving in housekeeping and room service roles. Her impeccable attention to detail ensures that guest rooms are always clean and inviting. With a 4.8-star rating, Sarah is known for her dedication to providing a comfortable and tidy environment for all guests. She is a true asset to our team."
   },
   {
-    "name": "Deluxe Room",
-    "price": 150,
-    "description": "A comfortable deluxe room with all modern amenities.",
-    "room_size": "350 sq. ft.",
-    "special_offer": "10% off for a week-long stay",
-    "img": "https://i.ibb.co/sq8fxrr/room2.jpg"
+    "name": "John Smith",
+    "worker_details": [
+      "Front Desk",
+      "Concierge",
+      "Concierge",
+      "Tour Guide"
+    ],
+    "img": "https://i.ibb.co/BLtD4W0/user4.jpg",
+    "rating": 4.5,
+    "salary": 35000,
+    "description": "John Smith is the friendly face you'll encounter at our front desk and concierge service. With a 4.5-star rating, John's welcoming demeanor and in-depth knowledge of the area make him an essential part of the guest experience. He goes the extra mile to ensure that guests have all the information they need for an enjoyable stay."
   },
   {
-    "name": "Family Suite",
-    "price": 350,
-    "description": "A spacious suite perfect for families with a living area.",
-    "room_size": "600 sq. ft.",
-    "special_offer": "Children stay for free",
-    "img": "https://i.ibb.co/Xy8DwHN/room3.jpg"
+    "name": "Maria Rodriguez",
+    "worker_details": [
+      "Chef",
+      "Kitchen Staff",
+      "Spa Therapist",
+      "Masseuse"
+    ],
+    "img": "https://i.ibb.co/9rfRQrv/user2.jpg",
+    "rating": 4.7,
+    "salary": 42000,
+    "description": "Maria Rodriguez is a culinary wizard in our kitchen, expertly handling the roles of chef and kitchen staff. With a 4.7-star rating, Maria's culinary creations are a delight for the taste buds. Her passion for cooking and the high standards she maintains in the kitchen ensure that our guests savor every bite."
   },
   {
-    "name": "Standard Room",
-    "price": 100,
-    "description": "A comfortable standard room with a city view.",
-    "room_size": "300 sq. ft.",
-    "special_offer": "None",
-    "img": "https://i.ibb.co/hVYZYNc/room4.jpg"
-  },
-  {
-    "name": "Executive Suite",
-    "price": 300,
-    "description": "An executive suite with a separate work area.",
-    "room_size": "450 sq. ft.",
-    "special_offer": "15% off for business travelers",
-    "img": "https://i.ibb.co/vLB5nkw/room5.jpg"
-  },
-  {
-    "name": "Penthouse",
-    "price": 500,
-    "description": "A luxurious penthouse with a private terrace and spa.",
-    "room_size": "800 sq. ft.",
-    "special_offer": "Exclusive access to the spa",
-    "img": "https://i.ibb.co/9p3XtpZ/room6.jpg"
-  },
-  {
-    "name": "Ocean View Suite",
-    "price": 400,
-    "description": "A suite with stunning ocean views and a balcony.",
-    "room_size": "550 sq. ft.",
-    "special_offer": "Free access to the beach club",
-    "img": "https://i.ibb.co/NWqLFd7/room7.jpg"
-  },
-  {
-    "name": "Honeymoon Suite",
-    "price": 275,
-    "description": "A romantic suite for honeymooners with a Jacuzzi.",
-    "room_size": "400 sq. ft.",
-    "special_offer": "Complimentary champagne and chocolates",
-    "img": "https://i.ibb.co/GCf3yXW/room8.jpg"
-  },
-  {
-    "name": "Garden View Room",
-    "price": 125,
-    "description": "A cozy room with a view of the hotel's lush gardens.",
-    "room_size": "320 sq. ft.",
-    "special_offer": "10% off for garden enthusiasts",
-    "img": "https://i.ibb.co/tpc0vcZ/room9.jpg"
-  },
-  {
-    "name": "Business Class Room",
-    "price": 200,
-    "description": "A room designed for business travelers with a workspace.",
-    "room_size": "380 sq. ft.",
-    "special_offer": "Free high-speed Wi-Fi",
-    "img": "https://i.ibb.co/vqVx93V/rooom10.jpg"
-  },
-  {
-    "name": "Mountain View Suite",
-    "price": 350,
-    "description": "A suite with panoramic mountain views and a fireplace.",
-    "room_size": "600 sq. ft.",
-    "special_offer": "Complimentary firewood and hot cocoa",
-    "img": "https://i.ibb.co/Y0cDR0N/room11.jpg"
-  },
-  {
-    "name": "Economy Room",
-    "price": 80,
-    "description": "A budget-friendly room for the cost-conscious traveler.",
-    "room_size": "280 sq. ft.",
-    "special_offer": "Affordable rates for longer stays",
-    "img": "https://i.ibb.co/3p6WbPT/room12.jpg"
+    "name": "David Wilson",
+    "worker_details": [
+      "Maintenance",
+      "Security",
+      "Event Coordinator",
+      "Banquet Manager"
+    ],
+    "img": "https://i.ibb.co/9rfRQrv/user2.jpg",
+    "rating": 4.6,
+    "salary": 30000,
+    "description": "David Wilson takes care of the hotel's maintenance and security, ensuring a safe and comfortable environment for all. With a 4.6-star rating, David's attention to detail in maintenance and his commitment to security make him an indispensable part of the team. He works diligently to maintain the hotel's facilities and keep guests secure."
   }
 ]

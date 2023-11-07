@@ -13,7 +13,7 @@ const ReviewHome = () => {
   return (
     <div className="max-w-7xl px-5 mt-20 mx-auto">
        <div className="text-center mb-10">
-       <h1 className="text-3xl font-josefin text-center first-letter:text-4xl text-rose-500 mb-2">User All Review !</h1>
+       <h1 className="text-3xl font-josefin text-center first-letter:text-4xl text-rose-500 mb-2 md:text-white">User All Review !</h1>
         
        </div>
      
