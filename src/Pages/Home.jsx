@@ -14,7 +14,7 @@ const Home = () => {
         AOS.init({ duration: 2000 });
       });
     return(
-        <div data-aos="zoom-in">
+        <div>
             <Helmet>
             <title>Home</title>
             </Helmet>

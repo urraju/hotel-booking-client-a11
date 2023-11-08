@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    overflow-x: hidden;
+    
+    
+    
+}
 .hoverImg:hover {
     transform: scale(1.1);
     transition: all .5s;

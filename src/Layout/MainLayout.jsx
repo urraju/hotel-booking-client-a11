@@ -3,8 +3,13 @@ import {} from 'react-icons/'
 import logo from '../assets/logo.webp'
 import userIcon from '../assets/user2.svg'
 import useAuth from "../Auth/useAuth";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css"
 const MainLayout = () => {
-
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  });
   const {user , logOut} = useAuth()
   const handleLogOut = () => {
     logOut()
@@ -19,7 +24,7 @@ const MainLayout = () => {
     </>
    
     return(
-      <div className="w-full px-6 md:px-10 top-0 z-30 ">
+      <div  data-aos="zoom-in" className="w-full px-6 md:px-10 top-0 z-30 ">
       <div className=" max-w-7xl mx-auto mt-6   px-3">
         <div className="navbar ">
           <div className="navbar-start">

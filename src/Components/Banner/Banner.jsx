@@ -1,9 +1,13 @@
 import moment from 'moment/moment';
 import banner from '../../assets/banner/banner.jpg'
 import wave from '../../assets/banner/wave.svg'
- 
+import Aos from "aos";
+import "aos/dist/aos.css"
+import { useEffect } from 'react';
 const Banner = () => {
-
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  });
     return(
        <div className='w-full '>
         

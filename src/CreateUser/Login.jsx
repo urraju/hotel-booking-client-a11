@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Auth/useAuth";
 import SocialLogin from "../Components/SocialLogin/SocialLogin";
@@ -7,6 +7,7 @@ import axios from "axios";
 import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import toast from "react-hot-toast";
 
 const Login = () => {
   useEffect(() => {
@@ -26,7 +27,9 @@ const Login = () => {
       const userEmail = {email}
       axios.post('http://localhost:3000/jwt',userEmail, {withCredentials : true})
       .then(res => {
-        if(res.data.success) {
+        console.log(res.data);
+        if(res.data) {
+          toast.success('Success Login')
           navigate(location?.state ? location.state : "/")
         }
       })

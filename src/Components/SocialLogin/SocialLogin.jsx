@@ -2,17 +2,27 @@
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import useAuth from "../../Auth/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const SocialLogin = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
   const { google, github } = useAuth();
   const handleButton = (google) => {
     google()
-      .then((res) => console.log(res))
+      .then((res) => {
+        toast.success('login success')
+        navigate(location?.state ? location.state : "/")
+      })
       .catch((error) => console.log(error.message));
   };
   const githubHandler = (gitHub) => {
     gitHub()
-      .then((res) => console.log(res))
+    .then((res) => {
+      toast.success('login success')
+      navigate(location?.state ? location.state : "/")
+    })
       .catch((error) => console.log(error.message));
   };
   return (

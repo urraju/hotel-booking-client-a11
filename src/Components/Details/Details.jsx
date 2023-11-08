@@ -16,6 +16,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 // import { icons } from "react-icons";
 const Details = () => {
+  
   useEffect(() => {
     AOS.init({ duration: 2000 });
   });
@@ -28,6 +29,7 @@ const Details = () => {
   const { user } = useAuth();
   // const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
   const data = useLoaderData();
+  console.log('data',data);
   const {
     _id,
     img,
@@ -37,12 +39,24 @@ const Details = () => {
     pernight_price,
     room_size,
     room_count,
+    seat_count,
     special_offer,
     images,
   } = data;
+  const [seat, setSeat] = useState(seat_count);
+  const [seats, setSeats] = useState([]);
+
+  useEffect(() => {
+    const arr = new Array(seat);
+    arr.fill(-1);
+    setSeats(arr)
+     
+  }, [seat]);
+
   const sendBooking = {
     bookingTime: selectedDate,
     userEmail: user?.email,
+    userName: user?.displayName,
     name: name,
     img: img,
     price: price,
@@ -55,6 +69,8 @@ const Details = () => {
   };
 
   const handleBooking = () => {
+     
+    setSeat(seat -1)
     document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
@@ -66,12 +82,27 @@ const Details = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, Bookin it!",
     }).then((result) => {
+
       if (result.isConfirmed) {
+        fetch(`http://localhost:3000/update?id=${_id}`, {
+          method : 'PATCH',
+          headers : {'content-type' : 'application/json'},
+          body : JSON.stringify(seat_count),
+          credentials : "include"
+        
+        })
+        .then(data => data.json())
+        .then(res =>  {
+          console.log('res data',res.data);
+          setSeat(seat - 1)
+        })
         fetch(`http://localhost:3000/mybooking`, {
           method: "post",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(sendBooking),
+          credentials : 'include'
         })
+
           .then((res) => res.json())
           .then((postData) => {
             console.log(postData);
@@ -86,23 +117,14 @@ const Details = () => {
           });
       }
     });
+
   };
 
   const handleDateChange = (date) => {
+
     setSelectedDate(date);
   };
-  //  let object = {}
-  //  for(let room of room_count){
-  //   console.log(room);
-  //    object[room] = room + 1
-  //  }
-  // //  console.log(object);
-  // const handleUpdate = (_id) => {
-  //   axios.patch(`http://localhost:3000/update?id=${_id}`,{object})
-  //   .then(res => console.log(res.data))
-  //   // .catch(error => console.log(error))
-
-  // }
+ 
 
   return (
     <div data-aos="fade-in" className="w-full my-20">
@@ -117,7 +139,7 @@ const Details = () => {
         />
         <Marquee pauseOnHover={true}>
           <div className="grid mt-6 gap-3 grid-cols-4">
-            {images.map((img2, index) => (
+            {images?.map((img2, index) => (
               <img
                 key={index}
                 className="w-80 mr-2 border-l-4 border-rose-500 rounded"
@@ -156,7 +178,18 @@ const Details = () => {
             </p>
 
             <div>
-              {room_count?.map((room, count, index) => (
+              {seats.map((el, i) => {
+                return (
+                  <button
+                    onClick={() => handleUpdate(i)}
+                    key={i}
+                    className="mr-1 text-violet-800 border-b-2 border-success px-1  mt-3 "
+                  >
+                    Seats {i + 1}
+                  </button>
+                );
+              })}
+              {/* {room_count?.map((room, count, index) => (
                 <button
                   onClick={() => handleUpdate(_id)}
                   key={room.index}
@@ -164,8 +197,8 @@ const Details = () => {
                 >
                   Seats {count + 1}
                 </button>
-              ))}
-              {room_count ? (
+              ))} */}
+              {seats ? (
                 <button className="bg-green-100 block px-2 border-l-2 border-green-600 text-green-600   mt-3 mb-2 rounded-sm">
                   Room is Available
                 </button>
@@ -178,7 +211,7 @@ const Details = () => {
           </div>
 
           <div>
-            {room_count ? (
+            {seats && user?.email ? (
               <button
                 onClick={handleBooking}
                 className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center"
