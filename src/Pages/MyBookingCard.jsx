@@ -9,6 +9,7 @@ const MyBookingCard = ({ data, handleDelete }) => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   });
+  
   const back = useNavigate();
   const { user } = useAuth();
 
@@ -72,7 +73,7 @@ const MyBookingCard = ({ data, handleDelete }) => {
           </Link>
 
           <button
-            onClick={() => handleDelete(_id)}
+            onClick={() => handleDelete(_id)} 
             className="bg-rose-400 shadow-xl text-white rounded px-3 py-1  mt-2"
           >
             Cancel Booking

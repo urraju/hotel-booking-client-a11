@@ -22,7 +22,7 @@ const DarkMode = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.backgroundColor = darkMode ? "#000E14E8" : "white";
+    document.body.style.backgroundColor = darkMode ? "#141414" : "white";
     document.body.style.color = darkMode ? "white" : "#000E14E8";
 
     localStorage.setItem("darkMode", darkMode);
@@ -30,11 +30,11 @@ const DarkMode = () => {
 
   const handleToggle = () => {
     setDarkMode(!darkMode);
-  };
+  }; 
 
   return (
     <ToggleButton darkMode={darkMode} onClick={handleToggle}>
-      {darkMode ? <BsFillSunFill className="text-3xl"></BsFillSunFill> : <BsMoon></BsMoon>}
+      {darkMode ? <BsFillSunFill className="text-2xl"></BsFillSunFill> : <BsMoon  className="text-2xl"></BsMoon>}
     </ToggleButton>
   );
 };

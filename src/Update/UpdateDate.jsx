@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet";
-import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateDate = () => {
   const data = useLoaderData();
+  const {id} = useParams()
+  console.log(id);
   const {bookingTime,_id} = data
+  console.log(_id);
   const navigater = useNavigate()
 console.log(data);
   const handleDate = (e) => {
@@ -14,7 +17,7 @@ console.log(data);
 
     const info = {time}
 
-    fetch(`https://assignmant-11-server.vercel.app/mybooking/${_id}`, {
+    fetch(`https://assignmant-11-server.vercel.app/mybooking/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(info),
