@@ -4,7 +4,7 @@ import TestCard from "./TestCard";
 const Testimonial = () => {
     const [testimonial, setTestimonial] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/testimonial')
+        fetch('https://assignmant-11-server.vercel.app/testimonial')
         .then(res => res.json())
         .then(data => setTestimonial(data))
     },[])

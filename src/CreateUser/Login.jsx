@@ -25,7 +25,7 @@ const Login = () => {
     .then((res) =>  {
       console.log(res.user);
       const userEmail = {email}
-      axios.post('http://localhost:3000/jwt',userEmail, {withCredentials : true})
+      axios.post('https://assignmant-11-server.vercel.app/jwt',userEmail, {withCredentials : true})
       .then(res => {
         console.log(res.data);
         if(res.data) {

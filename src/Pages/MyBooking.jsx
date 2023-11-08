@@ -10,7 +10,7 @@ const MyBooking = () => {
     const [bookData, setBookData] = useState([])
      
     useEffect(() => {
-        const url = `http://localhost:3000/mybooking?email=${user.email}`
+        const url = `https://assignmant-11-server.vercel.app/mybooking?email=${user.email}`
         if(user?.email){
             fetch(url, {credentials : "include"})
             .then(res => res.json())
@@ -30,7 +30,7 @@ const MyBooking = () => {
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:3000/mybooking/${_id}`, {
+            fetch(`https://assignmant-11-server.vercel.app/mybooking/${_id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())

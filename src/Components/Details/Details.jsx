@@ -88,7 +88,7 @@ const Details = () => {
       confirmButtonText: "Yes, Bookin it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/update?id=${_id}`, {
+        fetch(`https://assignmant-11-server.vercel.app/update?id=${_id}`, {
           method: "PATCH",
         
           credentials: "include",
@@ -97,7 +97,7 @@ const Details = () => {
             console.log("res data", res.data);
             setSeat(seat - 1);
           });
-        fetch(`http://localhost:3000/mybooking`, {
+        fetch(`https://assignmant-11-server.vercel.app/mybooking`, {
           method: "post",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(sendBooking),

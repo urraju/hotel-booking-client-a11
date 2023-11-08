@@ -45,7 +45,7 @@ const MyBookingCard = ({ data, handleDelete }) => {
       userName: user?.displayName,
     };
 
-    fetch("http://localhost:3000/review", {
+    fetch("https://assignmant-11-server.vercel.app/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(reviewValue),

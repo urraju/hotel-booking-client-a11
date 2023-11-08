@@ -8,7 +8,7 @@ const NotFound = () => {
       <Link to="/">
         <button className=" text-red-500 w-full uppercase py-1 px-5 font-bold flex items-center font-roboto justify-center gap-2 rounded">
           Go Home <BsArrowRight className="   text-xl" />{" "}
-        </button>r
+        </button>
       </Link>
     </div>
     )}

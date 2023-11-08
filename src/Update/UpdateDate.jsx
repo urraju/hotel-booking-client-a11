@@ -14,7 +14,7 @@ console.log(data);
 
     const info = {time}
 
-    fetch(`http://localhost:3000/mybooking/${_id}`, {
+    fetch(`https://assignmant-11-server.vercel.app/mybooking/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(info),

@@ -26,7 +26,7 @@ const MainLayout = () => {
    
     return(
       <div  data-aos="zoom-in" className="w-full px-6 md:px-10   ">
-      <div className=" max-w-7xl mx-auto mt-6   px-3">
+      <div className=" max-w-7xl mx-auto  px-3">
         <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">

@@ -6,7 +6,7 @@ import FeatureCard from "./FeatureCard";
 const FeatureRoom = () => {
   const [feature, setFeature] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/featurerRoom")
+    fetch("https://assignmant-11-server.vercel.app/featurerRoom")
       .then((res) => res.json())
       .then((data) => setFeature(data));
   }, []);

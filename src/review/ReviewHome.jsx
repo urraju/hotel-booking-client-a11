@@ -10,7 +10,7 @@ const ReviewHome = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/review")
+    fetch("https://assignmant-11-server.vercel.app/review")
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, []);

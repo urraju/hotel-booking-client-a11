@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement : <NotFound/>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -25,13 +25,13 @@ const router = createBrowserRouter([
       {
         path: "rooms",
         element: <Rooms />,
-        loader: () => fetch("http://localhost:3000/rooms"),
+        loader: () => fetch("https://assignmant-11-server.vercel.app/rooms"),
       },
       {
         path: "details/:id",
         element: <Details />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/rooms/${params.id}`),
+          fetch(`https://assignmant-11-server.vercel.app/rooms/${params.id}`),
       },
       {
         path: "mybooking",
@@ -42,19 +42,20 @@ const router = createBrowserRouter([
         ),
       },
       {
-          path : 'updatedate/:id',
-          element : <UpdateDate/>,
-          loader : ({params}) => fetch(`http://localhost:3000/mybooking/${params.id}`)
+        path: "updatedate/:id",
+        element: <UpdateDate />,
+        loader: ({ params }) =>
+          fetch(`https://assignmant-11-server.vercel.app/mybooking/${params.id}`),
       },
       {
-          path : 'reviewcard/:id',
-          element : <ReviewCard/>,
-          loader : ({params}) => fetch(`http://localhost:3000/review/${params.id}`)
+        path: "reviewcard/:id",
+        element: <ReviewCard />,
+        loader: ({ params }) =>
+          fetch(`https://assignmant-11-server.vercel.app/review/${params.id}`),
       },
       {
-        path : 'featureroom',
-        element : <FeatureRoom/>,
-        // loader : () => fetch('http://localhost:3000/featurerRoom')
+        path: "featureroom",
+        element: <FeatureRoom />,
       },
       {
         path: "login",
