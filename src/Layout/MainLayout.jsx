@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css"
 import DarkMode from "../DarkMode/DarkMode";
+import { BiMenu } from "react-icons/bi";
 const MainLayout = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -32,26 +33,13 @@ const MainLayout = () => {
             <div className="dropdown">
               <label
                 tabIndex={0}
-                className="btn text-rose-500 btn-ghost   lg:hidden"
+                className="btn text-rose-500  border border-rose-500 btn-circle  mr-5  lg:hidden"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
+                 <BiMenu className="text-3xl"/>
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-gradient-to-t to-blue-700 from-black w-52 rounded border border-gradient-to-tr  border-gray-600 font-normal uppercase font-roboto gap-5  text-white md:text-white lg:text-white "
+                className="menu menu-sm dropdown-content mt-3 absolute p-5 shadow  bg-gradient-to-t to-blue-700 from-black w-52 rounded border border-gradient-to-tr  border-gray-600 font-normal uppercase font-roboto gap-5  text-white md:text-white lg:text-white "
               >
                 {NavBar}
               </ul>

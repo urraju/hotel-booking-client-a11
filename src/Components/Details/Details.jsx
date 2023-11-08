@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { FcNext, FcCancel } from "react-icons/fc";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
+import { BiSolidLogInCircle } from "react-icons/bi";
 const Details = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -197,18 +197,27 @@ const Details = () => {
 
           <div>
             {seats && user?.email ? (
-              <button
+             <div>
+               <button
                 onClick={handleBooking}
                 className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center"
               >
                 Book Now
                 <FcNext className="text-white" />
               </button>
+             
+             </div>
+              
             ) : (
-              <button className="bg-rose-300 px-5 py-1 rounded  disabled shadow-xl text-white flex gap-2 items-center">
+             <div>
+               <button className="bg-rose-300 px-5 py-1 rounded  disabled shadow-xl text-white flex gap-2 items-center">
                 Unavailable
                 <FcCancel className="text-white" />
               </button>
+              <Link to='/login'>
+              <p className="mt-3 flex items-center gap-2   rounded-full font-light py-1 bg-violet-700 text-white px-4 border-r-2">Please Login <BiSolidLogInCircle/> </p>
+              </Link>
+             </div>
             )}
           </div>
         </div>
