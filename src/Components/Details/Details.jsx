@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { FcNext, FcCancel } from "react-icons/fc";
+import { BsArrowRightShort } from "react-icons/bs";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment/moment";
@@ -14,22 +15,27 @@ import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-// import { icons } from "react-icons";
+
 const Details = () => {
-  
   useEffect(() => {
     AOS.init({ duration: 2000 });
   });
-  // const [count, setCount] = useState([]);
-
-  // const formattedDate = date.toLocaleDateString();
-  const [date, setDate] = useState(new Date());
+   
+  
+  const handleDay = (e) => {
+    e.preventDefault()
+    const form = e.target 
+     const day = form.day.value
+    console.log(day);
+ }
+  
+  // const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   console.log(selectedDate);
   const { user } = useAuth();
   // const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
   const data = useLoaderData();
-  console.log('data',data);
+   
   const {
     _id,
     img,
@@ -49,14 +55,14 @@ const Details = () => {
   useEffect(() => {
     const arr = new Array(seat);
     arr.fill(-1);
-    setSeats(arr)
-     
+    setSeats(arr);
   }, [seat]);
 
   const sendBooking = {
     bookingTime: selectedDate,
     userEmail: user?.email,
     userName: user?.displayName,
+    bookDay : day,
     name: name,
     img: img,
     price: price,
@@ -69,8 +75,7 @@ const Details = () => {
   };
 
   const handleBooking = () => {
-     
-    setSeat(seat -1)
+    setSeat(seat - 1);
     document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
@@ -82,27 +87,23 @@ const Details = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, Bookin it!",
     }).then((result) => {
-
       if (result.isConfirmed) {
         fetch(`http://localhost:3000/update?id=${_id}`, {
-          method : 'PATCH',
-          headers : {'content-type' : 'application/json'},
-          body : JSON.stringify(seat_count),
-          credentials : "include"
-        
+          method: "PATCH",
+          // headers: { "content-type": "application/json" },
+          // body: JSON.stringify(seat_count),
+          credentials: "include",
         })
-        .then(data => data.json())
-        .then(res =>  {
-          console.log('res data',res.data);
-          setSeat(seat - 1)
-        })
+          .then((res) => {
+            console.log("res data", res.data);
+            setSeat(seat - 1);
+          });
         fetch(`http://localhost:3000/mybooking`, {
           method: "post",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(sendBooking),
-          credentials : 'include'
+          credentials: "include",
         })
-
           .then((res) => res.json())
           .then((postData) => {
             console.log(postData);
@@ -117,14 +118,7 @@ const Details = () => {
           });
       }
     });
-
   };
-
-  const handleDateChange = (date) => {
-
-    setSelectedDate(date);
-  };
- 
 
   return (
     <div data-aos="fade-in" className="w-full my-20">
@@ -260,6 +254,13 @@ const Details = () => {
               <span className="font-bold">Room Size : </span>
               {room_size}
             </p>
+            <form onSubmit={handleDay} className="font-josefin mt-1  items-center font-bold flex gap-2 ">
+              Book day <BsArrowRightShort className="text-success text-xl"/>
+               
+                <input className="outline-none placeholder:font-light border px-2 w-24  border-success rounded-2xl" placeholder="type day" type="number" name="day"  id="" />
+               <button>Send</button>
+            </form>
+
             <p className="flex flex-col">
               <span className="font-josefin font-bold ">Select Date : </span>
               <DatePicker
