@@ -21,14 +21,14 @@ const Details = () => {
     AOS.init({ duration: 2000 });
   });
    
-  
+  const [day , setDay] = useState(0)
   const handleDay = (e) => {
     e.preventDefault()
     const form = e.target 
-     const day = form.day.value
-    console.log(day);
+     const bookingDay = form.day.value
+     setDay(bookingDay)
  }
-  
+  console.log(day);
   // const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   console.log(selectedDate);
@@ -62,8 +62,8 @@ const Details = () => {
     bookingTime: selectedDate,
     userEmail: user?.email,
     userName: user?.displayName,
-    bookDay : day,
     name: name,
+    bookingDay : day,
     img: img,
     price: price,
     description: description,

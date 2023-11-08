@@ -8,7 +8,6 @@ const ReviewCard = () => {
     AOS.init({ duration: 2000 });
   });
   const [review, setReview] = useState([]);
-  console.log(review);
   useEffect(() => {
     fetch("http://localhost:3000/review")
       .then((res) => res.json())

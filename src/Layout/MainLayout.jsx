@@ -6,6 +6,7 @@ import useAuth from "../Auth/useAuth";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css"
+import DarkMode from "../DarkMode/DarkMode";
 const MainLayout = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -24,7 +25,7 @@ const MainLayout = () => {
     </>
    
     return(
-      <div  data-aos="zoom-in" className="w-full px-6 md:px-10 top-0 z-30 ">
+      <div  data-aos="zoom-in" className="w-full px-6 md:px-10   ">
       <div className=" max-w-7xl mx-auto mt-6   px-3">
         <div className="navbar ">
           <div className="navbar-start">
@@ -73,9 +74,9 @@ const MainLayout = () => {
           </div>
 
           <div className="navbar-end flex gap-2 items-center">
-            {/* <div>
+            <div>
               <DarkMode />
-            </div> */}
+            </div>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
