@@ -90,8 +90,7 @@ const Details = () => {
       if (result.isConfirmed) {
         fetch(`http://localhost:3000/update?id=${_id}`, {
           method: "PATCH",
-          // headers: { "content-type": "application/json" },
-          // body: JSON.stringify(seat_count),
+        
           credentials: "include",
         })
           .then((res) => {
@@ -183,15 +182,7 @@ const Details = () => {
                   </button>
                 );
               })}
-              {/* {room_count?.map((room, count, index) => (
-                <button
-                  onClick={() => handleUpdate(_id)}
-                  key={room.index}
-                  className="mr-1 text-violet-800 border-b-2 border-success px-1  mt-3 "
-                >
-                  Seats {count + 1}
-                </button>
-              ))} */}
+              
               {seats ? (
                 <button className="bg-green-100 block px-2 border-l-2 border-green-600 text-green-600   mt-3 mb-2 rounded-sm">
                   Room is Available
