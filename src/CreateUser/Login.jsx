@@ -46,7 +46,7 @@ const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className=" mt-10 md:w-6/12  p-3 h-[500px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  from-orange-700 to-sky-950">
+      <div className=" mt-10 md:w-6/12  p-3 h-[500px] rounded flex items-center justify-center mx-auto bg-gradient-to-r  from-rose-500 border-b-8 border-violet-600 to-gray-900">
         <form
           onSubmit={handleLogin}
           className="w-96 rounded-lg p-10 backdrop-blur bg-white/10 font-philospar"
