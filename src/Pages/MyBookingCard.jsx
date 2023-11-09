@@ -19,14 +19,15 @@ const MyBookingCard = ({ data, handleDelete }) => {
     name,
     userEmail,
     price,
-    bookingTime,
+    bookingDay,
     pernight_price,
     room_size,
     userName,
-    bookingDay,
+    bookingTime,
     special_offer,
-    images,
+     
   } = data;
+  
   const handleReview = () => {
     document.getElementById("my_modal_3").showModal();
   };
@@ -121,6 +122,7 @@ const MyBookingCard = ({ data, handleDelete }) => {
             <span className="font-bold">Booking Date: </span>
             {bookingTime}
           </p>
+           
         </div>
       </div>
 

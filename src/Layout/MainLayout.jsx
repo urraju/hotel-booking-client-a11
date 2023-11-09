@@ -89,20 +89,6 @@ const MainLayout = () => {
               </ul>
             </div>
 
-            {/* {user ? (
-              <button
-                onClick={handleLogOut}
-                className="text-white font-philospar uppercase bg-rose-500  text-[12px] md:py-1 md:text-[16px] px-4  rounded py-[3px]"
-              >
-                Sing out
-              </button>
-            ) : (
-              <Link to="/login">
-                <button className="text-white md:py-1 text-[13px] uppercase font-philospar bg-rose-500 px-5 md:text-[16px] rounded py-[3px]">
-                  Login
-                </button>
-              </Link>
-            )} */}
           </div>
         </div>
       </div>

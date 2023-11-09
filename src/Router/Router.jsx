@@ -11,6 +11,7 @@ import UpdateDate from "../Update/UpdateDate";
 import ReviewCard from "../review/ReviewCard";
 import FeatureRoom from "../Components/FeatureRoom/FeatureRoom";
 import NotFound from "../Error/NotFound";
+import DateTime from "../Components/dateTime/DateTime";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
         path: "featureroom",
         element: <FeatureRoom />,
       },
+    
       {
         path: "login",
         element: <Login />,

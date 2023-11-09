@@ -20,22 +20,11 @@ const Details = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   });
-   
-  const [day , setDay] = useState(0)
-  const handleDay = (e) => {
-    e.preventDefault()
-    const form = e.target 
-     const bookingDay = form.day.value
-     setDay(bookingDay)
- }
-  console.log(day);
-  // const [date, setDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  console.log(selectedDate);
-  const { user } = useAuth();
-  // const bookingTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
+
   const data = useLoaderData();
-   
+  const { user } = useAuth();
+  const currentTime = moment().format("dddd, M/D/YYYY, h:mm:ss a");
+
   const {
     _id,
     img,
@@ -44,7 +33,6 @@ const Details = () => {
     description,
     pernight_price,
     room_size,
-    room_count,
     seat_count,
     special_offer,
     images,
@@ -58,24 +46,40 @@ const Details = () => {
     setSeats(arr);
   }, [seat]);
 
+  const [date, setDate] = useState({});
+  const handleDay = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const bookingDay = form.day.value;
+    const bookTime = form.bookTime.value;
+    const data = { bookingDay, bookTime };
+    setDate(data);
+
+    if (data) {
+      toast.success("Successfull");
+      form.reset();
+    }
+
+    if (bookTime) {
+      toast.success("Successfull");
+      form.reset();
+    }
+  };
+  console.log(date);
   const sendBooking = {
-    bookingTime: selectedDate,
+    bookingTime: currentTime,
+    bookDate: date,
     userEmail: user?.email,
     userName: user?.displayName,
     name: name,
-    bookingDay : day,
     img: img,
     price: price,
-    description: description,
     pernight_price: pernight_price,
     room_size: room_size,
     special_offer: special_offer,
-    images: images,
-    room_count: room_count,
   };
 
   const handleBooking = () => {
-    
     document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
@@ -90,13 +94,11 @@ const Details = () => {
       if (result.isConfirmed) {
         fetch(`https://assignmant-11-server.vercel.app/update?id=${_id}`, {
           method: "PATCH",
-        
+
           credentials: "include",
-        })
-          .then((res) => {
-            console.log("res data", res);
-            setSeat(seat - 1);
-          });
+        }).then((res) => {
+          setSeat(seat - 1);
+        });
         fetch(`https://assignmant-11-server.vercel.app/mybooking`, {
           method: "post",
           headers: { "content-type": "application/json" },
@@ -164,11 +166,6 @@ const Details = () => {
             <p>
               <span className="font-bold">Per Night</span> : ${pernight_price}
             </p>
-            <p>
-              {" "}
-              <span className="text-violet-700 font-bold">Date : </span>
-              {}
-            </p>
 
             <div>
               {seats.map((el, i) => {
@@ -178,11 +175,11 @@ const Details = () => {
                     key={i}
                     className="mr-1 text-violet-800 border-b-2 border-success px-1  mt-3 "
                   >
-                    Seats {i + 1}
+                    Seat {i + 1}
                   </button>
                 );
               })}
-              
+
               {seats ? (
                 <button className="bg-green-100 block px-2 border-l-2 border-green-600 text-green-600   mt-3 mb-2 rounded-sm">
                   Room is Available
@@ -196,28 +193,28 @@ const Details = () => {
           </div>
 
           <div>
-            {seats  && user?.email ? (
-             <div>
-               <button
-                onClick={handleBooking}
-                className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center"
-              >
-                Book Now
-                <FcNext className="text-white" />
-              </button>
-             
-             </div>
-              
+            {seats && user?.email ? (
+              <div>
+                <button
+                  onClick={handleBooking}
+                  className="bg-rose-500 px-5 py-1 rounded shadow-xl text-white flex gap-2 items-center"
+                >
+                  Book Now
+                  <FcNext className="text-white" />
+                </button>
+              </div>
             ) : (
-             <div>
-               <button className="bg-rose-300 px-5 py-1 rounded  disabled shadow-xl text-white flex gap-2 items-center">
-                Unavailable
-                <FcCancel className="text-white" />
-              </button>
-              <Link to='/login'>
-              <p className="mt-3 flex items-center gap-2   rounded-full font-light py-1 bg-violet-700 text-white px-4 border-r-2">Please Login <BiSolidLogInCircle/> </p>
-              </Link>
-             </div>
+              <div>
+                <button className="bg-rose-300 px-5 py-1 rounded  disabled shadow-xl text-white flex gap-2 items-center">
+                  Unavailable
+                  <FcCancel className="text-white" />
+                </button>
+                <Link to="/login">
+                  <p className="mt-3 flex items-center gap-2   rounded-full font-light py-1 bg-violet-700 text-white px-4 border-r-2">
+                    Please Login <BiSolidLogInCircle />{" "}
+                  </p>
+                </Link>
+              </div>
             )}
           </div>
         </div>
@@ -254,25 +251,30 @@ const Details = () => {
               <span className="font-bold">Room Size : </span>
               {room_size}
             </p>
-            <form onSubmit={handleDay} className="font-josefin mt-1  items-center font-bold flex gap-2 ">
-              Book day <BsArrowRightShort className="text-success text-xl"/>
-               
-                <input className="outline-none placeholder:font-light border px-2 w-24  border-success rounded-2xl block" placeholder="type day" type="number" name="day"  id="" />
-                <input className="uppercase outline-none border px-2 rounded-xl font-light text-gray-400" type="date" />
-               <button type="submit">Send</button>
+            <form
+              onSubmit={handleDay}
+              className="font-josefin mt-1  items-center font-bold flex gap-2 "
+            >
+              Book day <BsArrowRightShort className="text-success text-xl" />
+              <input
+                className="outline-none placeholder:font-light border px-2 w-24  border-success rounded-2xl block"
+                placeholder="Type day"
+                type="number"
+                name="day"
+                id=""
+              />
+              <input
+                className="uppercase outline-none border px-2 rounded-xl font-light text-gray-400"
+                name="bookTime"
+                type="date"
+              />
+              <button
+                className="rounded bg-success text-white px-3 font-light"
+                type="submit"
+              >
+                send
+              </button>
             </form>
-
-            <p className="flex flex-col">
-              <span className="font-josefin font-bold ">Select Date : </span>
-
-              
-              {/* <DatePicker
-                className="border outline-none px-2 py-1 border-violet-300 rounded mt-2"
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                dateFormat="MM/d/yyyy,h:mm:ss a"
-              /> */}
-            </p>
           </div>
         </div>
       </dialog>
