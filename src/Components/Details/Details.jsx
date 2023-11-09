@@ -75,7 +75,7 @@ const Details = () => {
   };
 
   const handleBooking = () => {
-    setSeat(seat - 1);
+    
     document.getElementById("my_modal_3").showModal();
     Swal.fire({
       title: `You Want to Bookin Now`,
@@ -94,7 +94,7 @@ const Details = () => {
           credentials: "include",
         })
           .then((res) => {
-            console.log("res data", res.data);
+            console.log("res data", res);
             setSeat(seat - 1);
           });
         fetch(`https://assignmant-11-server.vercel.app/mybooking`, {
@@ -196,7 +196,7 @@ const Details = () => {
           </div>
 
           <div>
-            {seats && user?.email ? (
+            {seats  && user?.email ? (
              <div>
                <button
                 onClick={handleBooking}
@@ -257,18 +257,21 @@ const Details = () => {
             <form onSubmit={handleDay} className="font-josefin mt-1  items-center font-bold flex gap-2 ">
               Book day <BsArrowRightShort className="text-success text-xl"/>
                
-                <input className="outline-none placeholder:font-light border px-2 w-24  border-success rounded-2xl" placeholder="type day" type="number" name="day"  id="" />
-               <button>Send</button>
+                <input className="outline-none placeholder:font-light border px-2 w-24  border-success rounded-2xl block" placeholder="type day" type="number" name="day"  id="" />
+                <input className="uppercase outline-none border px-2 rounded-xl font-light text-gray-400" type="date" />
+               <button type="submit">Send</button>
             </form>
 
             <p className="flex flex-col">
               <span className="font-josefin font-bold ">Select Date : </span>
-              <DatePicker
+
+              
+              {/* <DatePicker
                 className="border outline-none px-2 py-1 border-violet-300 rounded mt-2"
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
                 dateFormat="MM/d/yyyy,h:mm:ss a"
-              />
+              /> */}
             </p>
           </div>
         </div>

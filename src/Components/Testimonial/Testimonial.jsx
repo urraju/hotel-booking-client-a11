@@ -11,7 +11,7 @@ const Testimonial = () => {
     return(
         <div className="mt-20 p-5">
             <div className="text-center">
-                <h1 className="first-letter:text-5xl first-letter:text-rose-500 mb-2 text-4xl"> User Testimonial</h1>
+                <h1 className="first-letter:text-5xl first-letter:text-rose-500 mb-2 text-4xl"> worker Testimonial</h1>
                 <p className="text-gray-500 mt-4 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero explicabo nostrum <br /> inventore commodi quisquam adipisci doloremque esse,  fuga ratione.</p>
             </div>
             <div className="mt-20 p-5 py-20  max-w-7xl mx-auto bg-gradient-to-r to-violet-500 from-rose-400">

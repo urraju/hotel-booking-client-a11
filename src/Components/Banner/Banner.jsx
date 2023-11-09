@@ -1,5 +1,5 @@
 import moment from 'moment/moment';
-import banner from '../../assets/banner/banner.jpg'
+import banner from '../../assets/banner/banner.png'
 import wave from '../../assets/banner/wave.svg'
 import Aos from "aos";
 import "aos/dist/aos.css"

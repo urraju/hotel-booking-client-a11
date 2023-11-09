@@ -34,7 +34,7 @@ const DarkMode = () => {
 
   return (
     <ToggleButton darkMode={darkMode} onClick={handleToggle}>
-      {darkMode ? <BsFillSunFill className="text-2xl"></BsFillSunFill> : <BsMoon  className="text-2xl"></BsMoon>}
+      {darkMode ? <BsFillSunFill className="text-2xl"></BsFillSunFill> : <BsMoon  className="text-2xl text-gray-400"></BsMoon>}
     </ToggleButton>
   );
 };

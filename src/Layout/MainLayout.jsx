@@ -8,6 +8,7 @@ import Aos from "aos";
 import "aos/dist/aos.css"
 import DarkMode from "../DarkMode/DarkMode";
 import { BiMenu } from "react-icons/bi";
+import { BsSearch } from "react-icons/bs";
 const MainLayout = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -61,10 +62,17 @@ const MainLayout = () => {
             </ul>
           </div>
 
-          <div className="navbar-end flex gap-2 items-center">
+          <div className="navbar-end  flex gap-2 items-center">
+
+          <div className="flex items-center opacity-0 md:opacity-100   gap-1 border px-3 py-1 rounded-full border-gray-200">
+              <input className="bg-transparent   outline-none" type="text" placeholder="Search" />
+              <BsSearch className="text-gray-400"/>
+            </div>
+
             <div>
               <DarkMode />
             </div>
+            
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">

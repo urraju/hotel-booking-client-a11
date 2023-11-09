@@ -12,15 +12,15 @@ const SocialLogin = () => {
   const handleButton = (google) => {
     google()
       .then((res) => {
-        toast.success('login success')
+        toast.success('Login success')
         navigate(location?.state ? location.state : "/")
       })
       .catch((error) => console.log(error.message));
   };
-  const githubHandler = (gitHub) => {
-    gitHub()
+  const githubHandler = (github) => {
+    github()
     .then((res) => {
-      toast.success('login success')
+      toast.success('Login success')
       navigate(location?.state ? location.state : "/")
     })
       .catch((error) => console.log(error.message));
@@ -30,7 +30,7 @@ const SocialLogin = () => {
       <div className="divider text-white">continue with</div>
       <div className=" flex justify-center gap-7">
         <button
-          onClick={() => handleButton(google, github)}
+          onClick={() => handleButton(google)}
           className="bg-white h-10 w-10 hover:bg-black transition delay-75 hover:text-white rounded-full"
         >
           <div className="flex justify-around">

@@ -21,13 +21,14 @@ const NewsLetter = () => {
       </div>
       <div className="max-w-7xl p-5 mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
         <div>
-            <img className="w-[px]" src={gmail} alt="" />
+            <img className=" w-full md:w-[1200px]" src={gmail} alt="" />
         </div>
-        <div className="bg-black/90 border border-gray-600 flex flex-col items-center h-96 relative p-4 rounded text-center justify-center  w-full  mt-20">
+        <div className="bg-cyan-950  border border-gray-600 flex flex-col items-center h-80 relative p-4 rounded-xl text-center justify-center  w-full  mt-20">
           <p className="text-white absolute h-20 w-20 p-4 rounded-full bg-gradient-to-t to-blue-600 border border-violet-400 from-violet-600 -top-7">
             <BiLogoGmail className="text-5xl text-white text-center" />
           </p>
-          <h1 className="text-3xl font-josefin text-white first-letter:text-5xl first-letter:text-rose-500">Newsletter</h1>
+          <p className="text-3xl uppercase mt-2 text-white">Subscribe our</p>
+          <h1 className="text-3xl font-josefin text-white first-letter:text-4xl first-letter:text-rose-600 mt-3">Newsletter</h1>
           <p className="uppercase text-gray-300 mt-5 mb-4">
             Stay up to date with our latest news and bookin
           </p>
