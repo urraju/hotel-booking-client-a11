@@ -1,5 +1,12 @@
 - ## LIVE LINK : https://assignmant-11.web.app
- 
+
+ ###  Hotel Bookin Service : 
+- This platform is basically for room booking across the entire hotel, numerous rooms you can avail any facility you want. It is open for everyone, there are various facilities for family friends and even couples
+
+### Tecnologises :
+Tailwind, React, React Router, DiasyUi, Firebase, MongoDB, ExpressJS, NodeJS,AOS.
+
+## Features :
  - ### 1.Search and Filter Options:  Hotel booking websites typically offer a user-friendly search interface where users can input their destination, check-in and check-out dates, and the number of guests. They often provide filters for price range, star ratings, amenities, and user reviews to help users narrow down their options.
 
  - ### 2.Detailed Hotel Listings: Each hotel listing includes essential information such as photos, room types, prices, location on a map, and a description of the property. Users can compare different hotels and make informed choices.
